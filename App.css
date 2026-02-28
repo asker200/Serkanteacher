@@ -1,0 +1,183 @@
+/* Serkan Hoca İngilizce - Custom Styles */
+
+/* Clickable Words */
+.clickable-word {
+  cursor: pointer;
+  border-bottom: 2px dotted #3b82f6;
+  transition: all 0.2s ease;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.clickable-word:hover {
+  background-color: #dbeafe;
+  border-bottom-style: solid;
+}
+
+/* Smooth Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .clickable-word {
+    border-bottom-width: 1.5px;
+    padding: 1px 2px;
+  }
+  
+  /* Larger touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text readability */
+  p {
+    line-height: 1.8;
+  }
+}
+
+/* Prevent text selection on clickable words */
+.clickable-word {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+.clickable-word:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Level Badge Colors */
+.level-a1 { background-color: #22c55e; }
+.level-a2 { background-color: #10b981; }
+.level-b1 { background-color: #3b82f6; }
+.level-b2 { background-color: #6366f1; }
+.level-c1 { background-color: #a855f7; }
+.level-c2 { background-color: #f43f5e; }
+
+/* Quiz Timer Animation */
+@keyframes pulse-red {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.timer-warning {
+  animation: pulse-red 1s ease-in-out infinite;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Press Effect */
+.btn-press:active {
+  transform: scale(0.95);
+}
+
+/* Tooltip Arrow */
+.tooltip-arrow {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: #1e293b;
+}
+
+/* Progress Bar Animation */
+.progress-bar {
+  transition: width 0.3s ease;
+}
+
+/* Answer Button States */
+.answer-btn {
+  transition: all 0.2s ease;
+}
+
+.answer-btn:hover:not(:disabled) {
+  transform: translateX(4px);
+}
+
+.answer-btn.correct {
+  background-color: #dcfce7;
+  border-color: #22c55e;
+}
+
+.answer-btn.incorrect {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+}
+
+/* Safe Area for Mobile */
+@supports (padding-top: env(safe-area-inset-top)) {
+  header {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  /* Can be enabled later if needed */
+}
+
+/* Print styles */
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
